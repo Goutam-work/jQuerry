@@ -1,0 +1,102 @@
+#signup{
+    margin-top: 10%;
+}
+#screenControl{
+    text-align: right;
+    color: #ff0000;
+    cursor: pointer;
+    width:100%;
+}
+#scrollable{
+    height: 450px;
+    overflow: auto;
+}
+#refresh{
+    height:20%;
+    width: 15%;
+    cursor: pointer;
+    display: inline;
+}
+#expression{
+    font-size: 30px;
+    font-family: cursive;
+    display: block;
+}
+#result{
+    width: 50%;
+    margin-bottom: 0%;
+}
+#dateerror,#ccountryerror,#pcountryerror{
+    display:none;
+    color: #ff0000;
+}
+#addresscopy{
+    width:20px;
+}
+.slideshow{
+    display:inline-block;
+    margin: auto 40%;;
+}
+.header{
+    display: flex;
+    justify-content: center;
+    background-color: #494e4efa;
+    width: 100%;
+    align-items: center;
+    padding-top: 20px;
+    font-family: cursive;
+}
+.captcha{
+    display:block;
+    margin: 10px auto 25px auto ;
+    width: 20%;
+    height: 30%;
+    border: 1px solid #000000;
+    text-align: center;
+}
+.flexbox{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+    background-color: #dadddd;
+    margin:5% auto;
+}
+.formt{
+    font-family: 'Times New Roman', Times, serif;
+    width: 100%;
+    text-align: center;
+}
+.formt td{
+    width:50%;
+}
+.formt tr:nth-child(even){background-color: #faf9fd;}
+input,select,textarea {
+    width: 100%;
+    padding: 10px 10px;
+    margin: 1%;
+    display: inline;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=radio]{
+    width:5%;
+}
+input[type=submit]{
+    background-color: #4CAF50;
+    font-size: 150%;
+    color: #ffffff;
+    padding: 16px 32px;
+    margin:2% 25%;
+    cursor: pointer;
+    width: 50%;
+}
+.foot{
+    padding: 20px;
+    text-align: center;
+    position:fixed;
+    bottom: 10px;
+    width:100%;
+    background: #dddddd;
+}

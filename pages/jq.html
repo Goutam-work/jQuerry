@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<head>
+    <title>User Registration</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src = "../js/script.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div>
+            <img src="../resourses/user.png" alt="Logo" height="50px" width="50px" >
+        </div>
+        <div>
+            <h1>E-MART</h1>
+        </div>
+    </div>
+    <input type="submit" value="Sign Up" id="signup" onclick="showForm()">
+    <div class="flexbox">
+    <span id="screenControl" onclick="changeScreen()">Full Screen</span>
+    <form action="" name="myForm" method="POST" onsubmit="return validateForm()">
+            <fieldset>
+            <legend>Personal information:</legend>          
+            <div id="scrollable">
+                <table  class="formt" >
+                    <tr>
+                        <td><b>First Name</b><sup>*</sup></td>
+                        <td><input type="text" name="fname" id="fname" placeholder="Your first name.."></td>
+                    </tr>
+                    <tr>
+                            <td><b>Middle Name</b></td>
+                            <td><input type="text" name="mname" id="mname" placeholder="Your middle name.."></td>
+                    </tr>
+                    <tr>
+                            <td><b>Last Name</b><sup>*</sup></td>
+                            <td><input type="text" name="lname" id="lname" placeholder="Your last name.."></td>
+                    </tr>
+
+                    <tr>
+                        <td><b>Email</b><sup>*</sup></td>
+                        <td><input type="email" name="mail" id="mail"  placeholder="xyz@abc.com"></td>
+                    </tr>
+                    <tr>
+                            <td><b>Phone No.</b><sup>*</sup></td>
+                            <td><input type="text" name="phno" id="phno" placeholder="12345....."></td>
+                    </tr>
+                    <tr>
+                            <td><b>Password</b><sup>*</sup></td>
+                            <td><input type="password" name="pass" id="pass" placeholder="Password"></td>
+                    </tr>
+                    <tr>
+                            <td><b>Re-enter Password</b><sup>*</sup></td>
+                            <td><input type="password" name="repass" id="repass" placeholder="re-enter password"></td>
+                    </tr>
+                    <tr>
+                            <td><b>Date Of Birth</b><sup>*</sup></td>
+                            <td><input type="date" name="dob" id="dob" ><span id="dateerror"></span></td>
+                    </tr>
+                    <tr>
+                            <td><b>Gender</b><sup>*</sup></td>
+                            <td>    
+                            <input type="radio" name="gender" value="male" id="male" checked>
+                            <label for="male">Male</label>  
+                            <input type="radio" name="gender" value="female" id="female">
+                            <label for="female">Female</label>  
+                            <input type="radio" name="gender" value="other" id="other">
+                            <label for="other">Other</label>                          
+                            </td>
+                    </tr>
+                    <tr>
+                            <td><b>Current Address</b></td>
+                            <td>
+                                <input type="text" name="cadd" id="cadd" placeholder="address...">
+                                <input type="text" name="ccity" id="ccity" placeholder="city">
+                                <input type="text" name="czip" id="czip" placeholder="Zip-Code">                               
+                                    <select  name="ccountry"  id="ccountrySelect" onchange="makeSubmenu(this)">
+                                        <option value="" >country</option>
+                                        <option value="USA" >USA</option>
+                                        <option value="Singapore" >Singapore</option>
+                                    </select>
+                                    <select name="cstate" id="cstateSelect">
+                                            <option value="" >state</option>
+                                        </select><span id="ccountryerror"></span></td>
+                    </tr>
+                    <tr>
+                            <td><b>Permanent Address</b><sup>*</sup></td>
+                            <td>
+                                <input type="checkbox" id="addresscopy" onclick="addressCopy()">Same as Current Addres</span>
+                                <input type="text" name="padd" id="padd" placeholder="address..." ><br>
+                                <input type="text" name="pcity" id="pcity" placeholder="city" ><br>
+                                <input type="text" name="pzip" id="pzip" placeholder="Zip-Code">                               
+                                    <select  name="pcountry" id="pcountrySelect" onchange="makeSubmenu(this)">
+                                        <option value="" >country</option>
+                                        <option value="USA" >USA</option>
+                                        <option value="Singapore" >Singapore</option>
+                                    </select>
+                                    <select name="pstate" id="pstateSelect">
+                                            <option value="" >state</option>
+                                        </select><span id="pcountryerror"></span></td>
+                    </tr>
+                    <tr>
+                            <td><b>Personal Interests</b></td>
+                            <td><textarea name="interests" id="interests" 
+                                placeholder="like sports, books etc...use space or newline for multiple interests "></textarea></td>
+                    </tr>
+                </table>    
+            
+            <div class="captcha">
+                <span>SOLVE :</span>
+                <span id="expression"></span>                
+                <input  type="number" id="result">
+                <img src="../resourses/refresh.jpg" alt="refresh"  id="refresh" onclick="refreshCaptcha()">
+                <span id="captchaerror" style="color:red;display:none;">*Wrong Answer</span>               
+            </div>
+            <input type="submit" value="Submit">
+            </div>
+            </fieldset>
+</div>
+    </form>
+    <div class="foot">
+            <div align="center">
+                    <img src="../resourses/user.png" alt="Logo" height="50px" width="50px" ><b>E-MART</b><br>
+                    <em>@all rights reserved</em>
+            </div>
+        </div>
+    
+</body>
