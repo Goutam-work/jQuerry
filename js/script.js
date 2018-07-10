@@ -17,14 +17,13 @@ function makeSubmenu(obj) {
     var state=obj.id[0]+'stateSelect';
     if(value.length == 0) {
         $("#"+state).html("<option>state</option>");
-        //document.getElementById(state).innerHTML = "<option>state</option>";
     }
     else {
         var statesOptions = "";
         for(var stateId in stateByCountry[value]) {
             statesOptions+="<option>"+stateByCountry[value][stateId]+"</option>";
         }
-        //document.getElementById(state).innerHTML = statesOptions;
+ 
         $("#"+state).html(statesOptions);
     }
 }
@@ -40,7 +39,7 @@ function generateCaptcha(){
             generateCaptcha();
         }
         else{
-           // document.getElementById("expression").innerHTML=expression;
+      
             $("#expression").text(expression).fadeIn(500);
         }
 }
@@ -49,10 +48,6 @@ function resetSelection() {
     $("#cstateSelect").selectedIndex = 0;
     $("#pcountrySelect").selectedIndex = 0;
     $("#pstateSelect").selectedIndex = 0;
-    //document.getElementById("ccountrySelect").selectedIndex = 0;
-    //document.getElementById("cstateSelect").selectedIndex = 0;
-    //document.getElementById("pcountrySelect").selectedIndex = 0;
-    //document.getElementById("pstateSelect").selectedIndex = 0;
 }
 function addressCopy(){
     var status=$('#addresscopy').prop('checked');
@@ -61,8 +56,6 @@ function addressCopy(){
     $("#padd").val($("#cadd").val());
     $("#pcity").val($("#ccity").val());
     $("#pzip").val($("#czip").val());
-    //document.getElementById("pcountry").value=document.getElementById("ccountry").value;
-    //document.myForm.pcountry.value=document.myForm.ccountry.value;
     $("#pcountrySelect").val($("#ccountrySelect").val());
     makeSubmenu(pcountry);
     $("#pstateSelect").val($("#cstateSelect").val());
@@ -79,8 +72,7 @@ function refreshCaptcha()
 {
 $("#captchaerror").css("display","none");
 $("#result").val("").css("border","1px solid #ccc");
-$('#expression').fadeOut(500,generateCaptcha)
-//generateCaptcha();
+$('#expression').fadeOut(500,generateCaptcha);
 }
 function changeScreen(){
     var size=$("#scrollable").css("height");
@@ -158,7 +150,6 @@ return condition;
 }
 
 function checkCaptcha(result){
-   // var result=$(id).get(0);
     if($(result).val().length === 0){
         $(result).val("").css("border","1px solid #ff0000");
         $("#captchaerror").css("display","block");
@@ -191,7 +182,6 @@ function checkCaptcha(result){
     }
 }
 function validText(text){
-    //var text=$(id).get(0);
     var length=$(text).val().length;
     var fieldName=$(text).attr('name');
     if(length > 0){
@@ -228,7 +218,6 @@ function validText(text){
     }
 }
 function validAdd(address){
-   // var add=$(id).get(0);
     var length=$(address).val().length;
     if(length > 0){
         var patt = /^\w[\w\.\/\,\s\(\):-]+$/;
@@ -250,7 +239,6 @@ function validAdd(address){
     }
 }
 function validMail(mail){
-    //var mail=$(id).get(0);
     var length=$(mail).val().length;
     if(length > 0){
         var patt = /^(\w[\w_.]+)@(\S)+\.([a-zA-Z]+)$/;
@@ -271,7 +259,6 @@ function validMail(mail){
     }
 }
 function validPhNo(number){
-        //var number=$(id).get(0);
         var length=$(number).val().length;
     if(length > 0){
         var numbers = /^[0-9]+$/;
@@ -292,7 +279,6 @@ function validPhNo(number){
     }
 }
 function validZip(number){
-    //var number=$(id).get(0);
     var length=$(number).val().length;
     if(length > 0){
         var numbers = /^[0-9]+$/;
@@ -315,7 +301,6 @@ function validZip(number){
     }    
 }
 function validcountry(country){
-    //var country=$(countryid).get(0);
     var status=$(country).attr('id');
     var id=status[0]+'countryerror';
     if($(country).val().length === 0){
@@ -328,8 +313,6 @@ function validcountry(country){
     }
 }
 function validPass(pass,repass){
-    //var pass=$(passid).get(0);
-    //var repass=$(repassid).get(0);
     if($(pass).val().length === 0 || $(repass).val().length === 0){
         if($(pass).val().length === 0){
             $(pass).css("border","1px solid #ff0000").attr("placeholder","This field cannot be empty !!");
@@ -353,7 +336,6 @@ function validPass(pass,repass){
     }
 }
 function validDate(date){
-    //var date=$(id).get(0);
     if($(date).val()){
         var today = new Date();
         var day = today.getDate();
